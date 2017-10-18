@@ -25,12 +25,17 @@ class ViewController: UIViewController {
                 return
             }
             
-            if let url = url {
-                let data = NSData(contentsOf: url)
-                OperationQueue.main.addOperation {
-                    self.iPhoneImageView.image = UIImage(data: data! as Data)
+            do {
+                if let url = url {
+                    let data = try Data(contentsOf: url)
+                    DispatchQueue.main.async {
+                        self.iPhoneImageView.image = UIImage(data: data)
+                    }
                 }
+            } catch{
+                print(error.localizedDescription)
             }
+            
         })
         
         downloadTask.resume()
