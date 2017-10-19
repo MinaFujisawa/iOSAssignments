@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iu9-12-xXc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Story Part View Controller-->
+        <scene sceneID="NjU-w8-uFF">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" automaticallyAdjustsScrollViewInsets="NO" id="eIY-VI-Xtw" customClass="StoryPartViewController" customModule="AVStoryBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7qi-ew-wSl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ssu-sK-rLV">
+                                <rect key="frame" x="0.0" y="20" width="375" height="375"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ssu-sK-rLV" secondAttribute="height" multiplier="1:1" id="Ajc-CT-1B6"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRa-tv-6R5">
+                                <rect key="frame" x="164.5" y="621" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REK-VF-T6L">
+                                <rect key="frame" x="164" y="411" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="editImageButton:" destination="eIY-VI-Xtw" eventType="touchUpInside" id="kuA-ME-dxB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ssu-sK-rLV" firstAttribute="trailing" secondItem="z5f-x7-jCJ" secondAttribute="trailing" id="3zp-Im-50L"/>
+                            <constraint firstItem="REK-VF-T6L" firstAttribute="centerX" secondItem="7qi-ew-wSl" secondAttribute="centerX" id="5QN-rM-Qo5"/>
+                            <constraint firstItem="ssu-sK-rLV" firstAttribute="leading" secondItem="z5f-x7-jCJ" secondAttribute="leading" id="EnN-4M-l4L"/>
+                            <constraint firstItem="z5f-x7-jCJ" firstAttribute="bottom" secondItem="PRa-tv-6R5" secondAttribute="bottom" constant="16" id="HRd-uP-Ebg"/>
+                            <constraint firstItem="REK-VF-T6L" firstAttribute="top" secondItem="ssu-sK-rLV" secondAttribute="bottom" constant="16" id="NQI-qG-WNt"/>
+                            <constraint firstItem="ssu-sK-rLV" firstAttribute="top" secondItem="z5f-x7-jCJ" secondAttribute="top" id="Si4-cY-nXn"/>
+                            <constraint firstItem="PRa-tv-6R5" firstAttribute="centerX" secondItem="7qi-ew-wSl" secondAttribute="centerX" id="z5u-QP-A1u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="z5f-x7-jCJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="editImageBtn" destination="REK-VF-T6L" id="ZpT-Cv-egQ"/>
+                        <outlet property="imageView" destination="ssu-sK-rLV" id="QNX-ZR-kMl"/>
+                        <outlet property="recordButton" destination="PRa-tv-6R5" id="Rih-jy-6W5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="24x-PD-V0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2468" y="122.78860569715144"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="5wW-3v-m4s">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iu9-12-xXc" customClass="PageViewController" customModule="AVStoryBook" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GM2-D5-OHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1647" y="123"/>
+        </scene>
+        <!--Story Part View Controller-->
+        <scene sceneID="h5k-8J-xwu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Zh1-tH-61i" customClass="StoryPartViewController" customModule="AVStoryBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iYV-Xh-ens">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESa-xD-lah">
+                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GUE-9u-qz6">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="GUE-9u-qz6" secondAttribute="height" multiplier="1:1" id="8h7-qn-sdd"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPn-1C-vAv">
+                                        <rect key="frame" x="164" y="391" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkM-tf-YLF">
+                                        <rect key="frame" x="164" y="548" width="47" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GUE-9u-qz6" firstAttribute="width" secondItem="ESa-xD-lah" secondAttribute="width" id="4ZH-oV-tf0"/>
+                                    <constraint firstItem="kkM-tf-YLF" firstAttribute="centerX" secondItem="ESa-xD-lah" secondAttribute="centerX" id="91X-7o-B7y"/>
+                                    <constraint firstAttribute="bottom" secondItem="kkM-tf-YLF" secondAttribute="bottom" constant="16" id="9NS-aG-AEO"/>
+                                    <constraint firstItem="rPn-1C-vAv" firstAttribute="centerX" secondItem="ESa-xD-lah" secondAttribute="centerX" id="IPw-VI-YdD"/>
+                                    <constraint firstAttribute="trailing" secondItem="GUE-9u-qz6" secondAttribute="trailing" id="OHl-5D-34J"/>
+                                    <constraint firstItem="rPn-1C-vAv" firstAttribute="top" secondItem="GUE-9u-qz6" secondAttribute="bottom" constant="16" id="Q5g-Zt-hnR"/>
+                                    <constraint firstItem="kkM-tf-YLF" firstAttribute="top" secondItem="rPn-1C-vAv" secondAttribute="bottom" constant="127" id="i7e-lz-NqM"/>
+                                    <constraint firstItem="kkM-tf-YLF" firstAttribute="leading" secondItem="rPn-1C-vAv" secondAttribute="leading" id="n08-JC-wlz"/>
+                                    <constraint firstItem="GUE-9u-qz6" firstAttribute="top" secondItem="ESa-xD-lah" secondAttribute="top" id="v8f-Ta-dwW"/>
+                                    <constraint firstItem="GUE-9u-qz6" firstAttribute="leading" secondItem="ESa-xD-lah" secondAttribute="leading" id="xKT-jD-NNN"/>
+                                </constraints>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lrS-1K-a1G">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.9049141839" green="0.9049141839" blue="0.9049141839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="1U2-u9-j7z"/>
+                                </constraints>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ESa-xD-lah" firstAttribute="leading" secondItem="pUs-ZW-oo5" secondAttribute="leading" id="3Io-Kv-B9x"/>
+                            <constraint firstItem="lrS-1K-a1G" firstAttribute="bottom" secondItem="pUs-ZW-oo5" secondAttribute="bottom" id="C5A-Yb-pkz"/>
+                            <constraint firstItem="lrS-1K-a1G" firstAttribute="trailing" secondItem="pUs-ZW-oo5" secondAttribute="trailing" id="P1a-Fb-OE4"/>
+                            <constraint firstItem="lrS-1K-a1G" firstAttribute="top" secondItem="ESa-xD-lah" secondAttribute="bottom" id="TRv-wY-9HV"/>
+                            <constraint firstItem="ESa-xD-lah" firstAttribute="trailing" secondItem="pUs-ZW-oo5" secondAttribute="trailing" id="fzV-ay-zUz"/>
+                            <constraint firstItem="ESa-xD-lah" firstAttribute="top" secondItem="pUs-ZW-oo5" secondAttribute="top" id="izz-TP-b1q"/>
+                            <constraint firstItem="lrS-1K-a1G" firstAttribute="leading" secondItem="pUs-ZW-oo5" secondAttribute="leading" id="n8Z-ul-cSQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pUs-ZW-oo5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MbD-DY-RWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3289" y="123"/>
+        </scene>
+    </scenes>
+</document>
