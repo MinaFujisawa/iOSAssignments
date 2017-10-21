@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import MapKit
 
 struct Photo {
     var title: String?
     var id: String?
     var url: String?
+    var coordinate : CLLocationCoordinate2D?
 }
