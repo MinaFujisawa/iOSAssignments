@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0921CA3A1F9A526800DA8404 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0921CA391F9A526800DA8404 /* AppDelegate.swift */; };
-		0921CA3C1F9A526800DA8404 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0921CA3B1F9A526800DA8404 /* ViewController.swift */; };
 		0921CA3F1F9A526800DA8404 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0921CA3D1F9A526800DA8404 /* Main.storyboard */; };
 		0921CA411F9A526800DA8404 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0921CA401F9A526800DA8404 /* Assets.xcassets */; };
 		0921CA441F9A526800DA8404 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0921CA421F9A526800DA8404 /* LaunchScreen.storyboard */; };
@@ -16,6 +15,8 @@
 		0921CA5A1F9A526800DA8404 /* CatMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0921CA591F9A526800DA8404 /* CatMapUITests.swift */; };
 		0921CA681F9A6A3D00DA8404 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0921CA671F9A6A3D00DA8404 /* Photo.swift */; };
 		0947C6A31F9BDC920023E0DD /* FlickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947C6A21F9BDC920023E0DD /* FlickerAPI.swift */; };
+		0947C6A71F9E700E0023E0DD /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947C6A61F9E700E0023E0DD /* CollectionViewController.swift */; };
+		0947C6AB1F9E72D50023E0DD /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947C6AA1F9E72D50023E0DD /* MyCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,6 @@
 /* Begin PBXFileReference section */
 		0921CA361F9A526800DA8404 /* CatMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0921CA391F9A526800DA8404 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0921CA3B1F9A526800DA8404 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0921CA3E1F9A526800DA8404 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0921CA401F9A526800DA8404 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0921CA431F9A526800DA8404 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		0921CA5B1F9A526800DA8404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0921CA671F9A6A3D00DA8404 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0947C6A21F9BDC920023E0DD /* FlickerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerAPI.swift; sourceTree = "<group>"; };
+		0947C6A61F9E700E0023E0DD /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		0947C6AA1F9E72D50023E0DD /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				0921CA391F9A526800DA8404 /* AppDelegate.swift */,
-				0921CA3B1F9A526800DA8404 /* ViewController.swift */,
+				0947C6A61F9E700E0023E0DD /* CollectionViewController.swift */,
+				0947C6AA1F9E72D50023E0DD /* MyCollectionViewCell.swift */,
 				0921CA3D1F9A526800DA8404 /* Main.storyboard */,
 				0921CA401F9A526800DA8404 /* Assets.xcassets */,
 				0921CA421F9A526800DA8404 /* LaunchScreen.storyboard */,
@@ -265,9 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0947C6A71F9E700E0023E0DD /* CollectionViewController.swift in Sources */,
+				0947C6AB1F9E72D50023E0DD /* MyCollectionViewCell.swift in Sources */,
 				0921CA681F9A6A3D00DA8404 /* Photo.swift in Sources */,
 				0947C6A31F9BDC920023E0DD /* FlickerAPI.swift in Sources */,
-				0921CA3C1F9A526800DA8404 /* ViewController.swift in Sources */,
 				0921CA3A1F9A526800DA8404 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

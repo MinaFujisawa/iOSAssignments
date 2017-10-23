@@ -31,18 +31,18 @@ struct FlickerAPI {
                         if let photo = photos["photo"] as? [[String: Any]] {
                             for i in 0...photo.count - 1 {
                                 let title = photo[i]["title"] as? String
-                                let id = photo[i]["id"] as? String
-                                let url = photo[i]["url_m"] as? String
-//                                print(title)
-                                photoList.append(Photo(title: title, id: id, url: url, coordinate: nil))
+                                let id = photo[i]["id"] as! String
+                                let urlString = photo[i]["url_m"] as! String
+                                let url = URL(string: urlString)!
+                                self.fetchCoordinate(id: id) { (coordinate) in
+                                    photoList.append(Photo(title: title, id: id, url: url, coordinate: coordinate))
+                                    DispatchQueue.main.async {
+                                        completion(photoList)
+                                    }
+                                }
                             }
                         }
                     }
-
-                    DispatchQueue.main.async {
-                        completion(photoList)
-                    }
-
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -52,48 +52,41 @@ struct FlickerAPI {
         getBasicInfotask.resume()
     }
 
-    static func fetchCoordinate(photos: [Photo], completion: @escaping ([Photo]) -> ()) {
-        var photoList = photos
+    static func fetchCoordinate(id: String, completion: @escaping (CLLocationCoordinate2D) -> ()) {
+        var coordinate = CLLocationCoordinate2D()
+        let url = URL(string: "https://api.flickr.com/services/rest/?method=flickr.photos.geo.getLocation&api_key=feadd15b72fc41f22223d740a0c346a5&photo_id=" + id + "&format=json&nojsoncallback=1&")!
+        let urlRequest = URLRequest(url: url)
+        let session = URLSession(configuration: URLSessionConfiguration.default)
 
-        for index in 0...photoList.count - 1 {
-            let id = photoList[index].id
-            let url = URL(string: "https://api.flickr.com/services/rest/?method=flickr.photos.geo.getLocation&api_key=feadd15b72fc41f22223d740a0c346a5&photo_id=" + id! + "&format=json&nojsoncallback=1&")!
-            let urlRequest = URLRequest(url: url)
-            let session = URLSession(configuration: URLSessionConfiguration.default)
+        let task = session.dataTask(with: urlRequest) { data, response, error in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
 
-            let task = session.dataTask(with: urlRequest) { data, response, error in
-                if error != nil {
-                    print(error!.localizedDescription)
-                    return
-                }
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
 
-                if let data = data {
-                    do {
-                        let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-
-                        if let photos = json ["photo"] as? [String: Any] {
-                            if let location = photos["location"] as? [String: Any] {
-                                let lan = Double (location["latitude"] as! String)!
-                                let lon = Double (location["longitude"] as! String)!
-                                let coordinate = CLLocationCoordinate2D(latitude: lan, longitude: lon)
-                                photoList[index].coordinate = coordinate
-                            }
+                    if let photos = json ["photo"] as? [String: Any] {
+                        if let location = photos["location"] as? [String: Any] {
+                            let lan = Double (location["latitude"] as! String)!
+                            let lon = Double (location["longitude"] as! String)!
+                            coordinate = CLLocationCoordinate2D(latitude: lan, longitude: lon)
                         }
-
-                        DispatchQueue.main.async {
-                            completion(photoList)
-                        }
-
-                    } catch {
-                        print(error.localizedDescription)
                     }
-                } else {
-                    print("Photo has no location information?")
+
+                    DispatchQueue.main.async {
+                        completion(coordinate)
+                    }
+
+                } catch {
+                    print(error.localizedDescription)
                 }
 
             }
-            task.resume()
+            
         }
-
+        task.resume()
     }
 }
