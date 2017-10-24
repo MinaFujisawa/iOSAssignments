@@ -50,6 +50,16 @@ class CollectionViewController: UICollectionViewController {
         cell.image.image = UIImage(data: data! as Data)
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToDetail" {
+            let detailVC = segue.destination as! DetailViewController
+            let cell = sender as! MyCollectionViewCell
+            if let indexPath = self.collectionView!.indexPath(for: cell){
+                detailVC.photo = photoList[indexPath.row]
+            }
+        }
+    }
 
     // MARK: UICollectionViewDelegate
 

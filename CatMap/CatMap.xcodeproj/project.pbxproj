@@ -17,6 +17,7 @@
 		0947C6A31F9BDC920023E0DD /* FlickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947C6A21F9BDC920023E0DD /* FlickerAPI.swift */; };
 		0947C6A71F9E700E0023E0DD /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947C6A61F9E700E0023E0DD /* CollectionViewController.swift */; };
 		0947C6AB1F9E72D50023E0DD /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947C6AA1F9E72D50023E0DD /* MyCollectionViewCell.swift */; };
+		09C98E451F9EA2FF00410C17 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C98E441F9EA2FF00410C17 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		0947C6A21F9BDC920023E0DD /* FlickerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerAPI.swift; sourceTree = "<group>"; };
 		0947C6A61F9E700E0023E0DD /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		0947C6AA1F9E72D50023E0DD /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		09C98E441F9EA2FF00410C17 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				0921CA391F9A526800DA8404 /* AppDelegate.swift */,
 				0947C6A61F9E700E0023E0DD /* CollectionViewController.swift */,
 				0947C6AA1F9E72D50023E0DD /* MyCollectionViewCell.swift */,
+				09C98E441F9EA2FF00410C17 /* DetailViewController.swift */,
 				0921CA3D1F9A526800DA8404 /* Main.storyboard */,
 				0921CA401F9A526800DA8404 /* Assets.xcassets */,
 				0921CA421F9A526800DA8404 /* LaunchScreen.storyboard */,
@@ -271,6 +274,7 @@
 				0947C6A71F9E700E0023E0DD /* CollectionViewController.swift in Sources */,
 				0947C6AB1F9E72D50023E0DD /* MyCollectionViewCell.swift in Sources */,
 				0921CA681F9A6A3D00DA8404 /* Photo.swift in Sources */,
+				09C98E451F9EA2FF00410C17 /* DetailViewController.swift in Sources */,
 				0947C6A31F9BDC920023E0DD /* FlickerAPI.swift in Sources */,
 				0921CA3A1F9A526800DA8404 /* AppDelegate.swift in Sources */,
 			);
