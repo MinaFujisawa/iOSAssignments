@@ -93,10 +93,10 @@ class StoryPartViewController: UIViewController {
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        let pageVC = PageViewController()
-        pageVC.pages[pageIndex] = page
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        let pageVC = PageViewController()
+//        pageVC.pages[pageIndex] = page
+//    }
 
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)

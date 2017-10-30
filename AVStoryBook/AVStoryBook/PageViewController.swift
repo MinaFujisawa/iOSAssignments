@@ -9,45 +9,56 @@
 import UIKit
 
 class PageViewController: UIPageViewController {
-    var index : Int!
-    var pages = [Page(image: nil, recordURL: nil), Page(image: nil, recordURL: nil) , Page(image: nil, recordURL: nil),
-                 Page(image: nil, recordURL: nil), Page(image: nil, recordURL: nil)]
-    let pageNum = 5
-    
+    var pageCollection: [UIViewController]!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        for _ in 0...pageNum{
-//            pages.append(Page(image: nil, recordURL: nil))
-//        }
 
-        index = 0
-        self.setViewControllers([getStoryPartVC()!], direction: .forward, animated: true, completion: nil)
+        let page1 = Page(image: nil, recordURL: nil)
+        let page2 = Page(image: nil, recordURL: nil)
+        let page3 = Page(image: nil, recordURL: nil)
+        let page4 = Page(image: nil, recordURL: nil)
+        let page5 = Page(image: nil, recordURL: nil)
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyPartViewController1 = storyboard.instantiateViewController(withIdentifier: "storyPage") as! StoryPartViewController
+        storyPartViewController1.page = page1
+
+        let storyPartViewController2 = storyboard.instantiateViewController(withIdentifier: "storyPage") as! StoryPartViewController
+        storyPartViewController2.page = page2
+
+        let storyPartViewController3 = storyboard.instantiateViewController(withIdentifier: "storyPage") as! StoryPartViewController
+        storyPartViewController3.page = page3
+
+        let storyPartViewController4 = storyboard.instantiateViewController(withIdentifier: "storyPage") as! StoryPartViewController
+        storyPartViewController4.page = page4
+
+        let storyPartViewController5 = storyboard.instantiateViewController(withIdentifier: "storyPage") as! StoryPartViewController
+        storyPartViewController5.page = page5
+
+        pageCollection = [storyPartViewController1, storyPartViewController2, storyPartViewController3,
+            storyPartViewController4, storyPartViewController5]
+        
+        self.setViewControllers([storyPartViewController1], direction: .forward, animated: true, completion: nil)
         self.dataSource = self
-    }
-    func getStoryPartVC() -> StoryPartViewController? {
-        if 0 <= index && index <= 5{
-            let vc =  storyboard!.instantiateViewController(withIdentifier: "ViewController") as! StoryPartViewController
-            vc.page = pages[index]
-            vc.pageIndex = index
-            print(index)
-            return vc
-        }
-        return nil
     }
 }
 
-extension PageViewController : UIPageViewControllerDataSource {
+extension PageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        // ???: why not woking?
-//        index -= 1
-        index = index - 1
-        return getStoryPartVC()
+        guard let index = pageCollection.index(of: viewController) else { return nil }
+        if (index-1 < 0) {
+            return nil;
+        }
+        return pageCollection[index-1]
     }
-    
+
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        index = index + 1
-        return getStoryPartVC()
+        guard let index = pageCollection.index(of: viewController) else { return nil }
+        if (index+1 >= pageCollection.count) {
+            return nil;
+        }
+        return pageCollection[index+1]
     }
 }

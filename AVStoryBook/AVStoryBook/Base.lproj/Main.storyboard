@@ -13,7 +13,7 @@
         <!--Story Part View Controller-->
         <scene sceneID="NjU-w8-uFF">
             <objects>
-                <viewController storyboardIdentifier="ViewController" automaticallyAdjustsScrollViewInsets="NO" id="eIY-VI-Xtw" customClass="StoryPartViewController" customModule="AVStoryBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="storyPage" automaticallyAdjustsScrollViewInsets="NO" id="eIY-VI-Xtw" customClass="StoryPartViewController" customModule="AVStoryBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7qi-ew-wSl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

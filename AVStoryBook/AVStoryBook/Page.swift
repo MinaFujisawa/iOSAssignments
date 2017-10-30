@@ -16,6 +16,6 @@ struct Page {
     init(image: UIImage?, recordURL: URL?) {
         self.image = image
         self.recordURL = recordURL
-    }
+    }   
 }
 
