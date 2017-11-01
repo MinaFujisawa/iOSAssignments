@@ -15,12 +15,14 @@ class Photo: NSObject, MKAnnotation {
     var id: String
     var url: URL
     var coordinate : CLLocationCoordinate2D
+    var tags : [String]
 
-    init(title: String?, id: String, url: URL, coordinate : CLLocationCoordinate2D) {
+    init(title: String?, id: String, url: URL, coordinate : CLLocationCoordinate2D, tags:[String]) {
         self.title = title
         self.id = id
         self.url = url
         self.coordinate = coordinate
+        self.tags = tags
     }
 }
 
