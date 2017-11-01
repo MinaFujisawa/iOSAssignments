@@ -9,8 +9,7 @@
 import Foundation
 import MapKit
 
-struct FlickerAPI {
-
+class FlickerAPI {
     static func fetchBasicData(url: URL, completion: @escaping ([Photo]) -> ()) {
         var photoList = [Photo]()
 
@@ -18,6 +17,7 @@ struct FlickerAPI {
         let session = URLSession(configuration: URLSessionConfiguration.default)
 
         let getBasicInfotask = session.dataTask(with: urlRequest) { data, response, error in
+
             if error != nil {
                 print(error!.localizedDescription)
                 return
@@ -47,7 +47,6 @@ struct FlickerAPI {
                     print(error.localizedDescription)
                 }
             }
-
         }
         getBasicInfotask.resume()
     }
@@ -75,7 +74,6 @@ struct FlickerAPI {
                             coordinate = CLLocationCoordinate2D(latitude: lan, longitude: lon)
                         }
                     }
-
                     DispatchQueue.main.async {
                         completion(coordinate)
                     }
@@ -83,9 +81,7 @@ struct FlickerAPI {
                 } catch {
                     print(error.localizedDescription)
                 }
-
             }
-            
         }
         task.resume()
     }

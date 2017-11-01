@@ -14,10 +14,10 @@
 		0921CA4F1F9A526800DA8404 /* CatMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0921CA4E1F9A526800DA8404 /* CatMapTests.swift */; };
 		0921CA5A1F9A526800DA8404 /* CatMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0921CA591F9A526800DA8404 /* CatMapUITests.swift */; };
 		0921CA681F9A6A3D00DA8404 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0921CA671F9A6A3D00DA8404 /* Photo.swift */; };
-		0931EBB51FAA358100A6557F /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931EBB41FAA358100A6557F /* ImageStore.swift */; };
 		0947C6A31F9BDC920023E0DD /* FlickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947C6A21F9BDC920023E0DD /* FlickerAPI.swift */; };
 		0947C6A71F9E700E0023E0DD /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947C6A61F9E700E0023E0DD /* CollectionViewController.swift */; };
 		0947C6AB1F9E72D50023E0DD /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947C6AA1F9E72D50023E0DD /* MyCollectionViewCell.swift */; };
+		0948F8B71FAA556A0051384B /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0948F8B61FAA556A0051384B /* ImageStore.swift */; };
 		09C98E451F9EA2FF00410C17 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C98E441F9EA2FF00410C17 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,10 +52,10 @@
 		0921CA591F9A526800DA8404 /* CatMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatMapUITests.swift; sourceTree = "<group>"; };
 		0921CA5B1F9A526800DA8404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0921CA671F9A6A3D00DA8404 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		0931EBB41FAA358100A6557F /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		0947C6A21F9BDC920023E0DD /* FlickerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerAPI.swift; sourceTree = "<group>"; };
 		0947C6A61F9E700E0023E0DD /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		0947C6AA1F9E72D50023E0DD /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		0948F8B61FAA556A0051384B /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		09C98E441F9EA2FF00410C17 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +117,7 @@
 				0921CA451F9A526800DA8404 /* Info.plist */,
 				0921CA671F9A6A3D00DA8404 /* Photo.swift */,
 				0947C6A21F9BDC920023E0DD /* FlickerAPI.swift */,
-				0931EBB41FAA358100A6557F /* ImageStore.swift */,
+				0948F8B61FAA556A0051384B /* ImageStore.swift */,
 			);
 			path = CatMap;
 			sourceTree = "<group>";
@@ -277,9 +277,9 @@
 				0947C6A71F9E700E0023E0DD /* CollectionViewController.swift in Sources */,
 				0947C6AB1F9E72D50023E0DD /* MyCollectionViewCell.swift in Sources */,
 				0921CA681F9A6A3D00DA8404 /* Photo.swift in Sources */,
+				0948F8B71FAA556A0051384B /* ImageStore.swift in Sources */,
 				09C98E451F9EA2FF00410C17 /* DetailViewController.swift in Sources */,
 				0947C6A31F9BDC920023E0DD /* FlickerAPI.swift in Sources */,
-				0931EBB51FAA358100A6557F /* ImageStore.swift in Sources */,
 				0921CA3A1F9A526800DA8404 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
