@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HBx-Gp-ywn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="75X-sP-spx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -79,11 +80,22 @@
                             <outlet property="delegate" destination="SFR-EY-OsT" id="HAl-Ci-lfH"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Cat Map" id="xig-3L-Vql"/>
+                    <navigationItem key="navigationItem" title="Cat Map" id="xig-3L-Vql">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="sNi-CG-ldN">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eBN-Yc-IlQ">
+                                <rect key="frame" x="311" y="7" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <segue destination="xnu-Be-GDt" kind="show" identifier="GoToSearch" id="9ud-yI-xVw"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fd3-Xt-COk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2991.1999999999998" y="-10.344827586206897"/>
+            <point key="canvasLocation" x="3330.4000000000001" y="-10.344827586206897"/>
         </scene>
         <!--Detail-->
         <scene sceneID="SYS-c0-02D">
@@ -133,25 +145,94 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVG-gF-oYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4092" y="-11.244377811094454"/>
+            <point key="canvasLocation" x="4431.1999999999998" y="-11.244377811094454"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="E1N-yE-cBe">
+            <objects>
+                <viewController id="xnu-Be-GDt" customClass="SearchViewController" customModule="CatMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k2N-JQ-fmX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LNW-yl-Enb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" id="CXl-cu-Bil" customClass="SearchTableViewCell" customModule="CatMap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CXl-cu-Bil" id="zBg-KZ-SeR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hd-ol-dBe">
+                                                    <rect key="frame" x="24" y="11.5" width="327" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7hd-ol-dBe" secondAttribute="trailing" constant="16" id="8wD-eO-5iU"/>
+                                                <constraint firstItem="7hd-ol-dBe" firstAttribute="centerY" secondItem="zBg-KZ-SeR" secondAttribute="centerY" id="KmM-6e-ZTd"/>
+                                                <constraint firstItem="7hd-ol-dBe" firstAttribute="leading" secondItem="zBg-KZ-SeR" secondAttribute="leadingMargin" constant="16" id="b9y-AS-rlV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="7hd-ol-dBe" id="K3P-LH-mgI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xnu-Be-GDt" id="EFh-6A-Kw3"/>
+                                    <outlet property="delegate" destination="xnu-Be-GDt" id="vLI-Ja-cdo"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LNW-yl-Enb" firstAttribute="top" secondItem="DmU-6b-8uK" secondAttribute="top" id="6iV-aW-Gxb"/>
+                            <constraint firstItem="DmU-6b-8uK" firstAttribute="trailing" secondItem="LNW-yl-Enb" secondAttribute="trailing" id="U3A-bu-idw"/>
+                            <constraint firstItem="LNW-yl-Enb" firstAttribute="leading" secondItem="DmU-6b-8uK" secondAttribute="leading" id="X8k-Pg-5Px"/>
+                            <constraint firstItem="DmU-6b-8uK" firstAttribute="bottom" secondItem="LNW-yl-Enb" secondAttribute="bottom" id="hxv-Us-l4R"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DmU-6b-8uK"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="iXw-Xy-FdX" id="5KH-Fw-Car"/>
+                        <outlet property="tableView" destination="LNW-yl-Enb" id="eKP-cH-lnk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uOu-Il-XYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="iXw-Xy-FdX">
+                    <connections>
+                        <outlet property="delegate" destination="xnu-Be-GDt" id="dER-2X-vGk"/>
+                        <outlet property="searchContentsController" destination="xnu-Be-GDt" id="4Ou-Jw-YNU"/>
+                        <outlet property="searchResultsDataSource" destination="xnu-Be-GDt" id="HAF-62-ym7"/>
+                        <outlet property="searchResultsDelegate" destination="xnu-Be-GDt" id="lsj-aE-DFB"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="4073" y="716"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="sXI-Lr-iSX">
+        <scene sceneID="u1X-n5-aEP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HBx-Gp-ywn" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="75X-sP-spx" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="whC-tK-SJT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BSQ-z4-AFV">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="SFR-EY-OsT" kind="relationship" relationship="rootViewController" id="ZL0-ft-h7k"/>
+                        <segue destination="SFR-EY-OsT" kind="relationship" relationship="rootViewController" id="ZDm-Ae-Owd"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hf0-ZX-s7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0z-wm-mSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2154" y="-10"/>
+            <point key="canvasLocation" x="2455" y="-11"/>
         </scene>
     </scenes>
 </document>
