@@ -74,6 +74,16 @@ class CollectionViewController: UICollectionViewController {
             if let indexPath = self.collectionView!.indexPath(for: cell) {
                 detailVC.photo = photoList[indexPath.row]
             }
+        } else if segue.identifier == "GoToSearch" {
+            let searchVC = segue.destination as! SearchViewController
+            searchVC.allPhotos = photoList
+            var allTags = Set<String>()
+            for photo in photoList {
+                for tag in photo.tags {
+                    allTags.insert(tag)
+                }
+            }
+            searchVC.allTags = Array(allTags)
         }
     }
 }

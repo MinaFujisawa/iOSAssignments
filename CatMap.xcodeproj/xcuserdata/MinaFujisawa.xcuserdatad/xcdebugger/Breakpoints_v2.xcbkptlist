@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CatMap/FlickerAPI.swift"
-            timestampString = "531268814.794872"
+            timestampString = "531283881.095438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "fetchCoordinate(id:completion:)"
             landmarkType = "7">
          </BreakpointContent>

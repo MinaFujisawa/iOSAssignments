@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0903A56C1FAA745700556A21 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0903A56B1FAA745700556A21 /* SearchViewController.swift */; };
+		0903A56E1FAA953C00556A21 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0903A56D1FAA953C00556A21 /* SearchTableViewCell.swift */; };
 		0921CA3A1F9A526800DA8404 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0921CA391F9A526800DA8404 /* AppDelegate.swift */; };
 		0921CA3F1F9A526800DA8404 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0921CA3D1F9A526800DA8404 /* Main.storyboard */; };
 		0921CA411F9A526800DA8404 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0921CA401F9A526800DA8404 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		0903A56B1FAA745700556A21 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0903A56D1FAA953C00556A21 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		0921CA361F9A526800DA8404 /* CatMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0921CA391F9A526800DA8404 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0921CA3E1F9A526800DA8404 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,10 +113,11 @@
 			children = (
 				0921CA391F9A526800DA8404 /* AppDelegate.swift */,
 				0947C6A61F9E700E0023E0DD /* CollectionViewController.swift */,
+				0903A56B1FAA745700556A21 /* SearchViewController.swift */,
 				0947C6AA1F9E72D50023E0DD /* MyCollectionViewCell.swift */,
 				09C98E441F9EA2FF00410C17 /* DetailViewController.swift */,
 				0921CA3D1F9A526800DA8404 /* Main.storyboard */,
-				0903A56B1FAA745700556A21 /* SearchViewController.swift */,
+				0903A56D1FAA953C00556A21 /* SearchTableViewCell.swift */,
 				0921CA401F9A526800DA8404 /* Assets.xcassets */,
 				0921CA421F9A526800DA8404 /* LaunchScreen.storyboard */,
 				0921CA451F9A526800DA8404 /* Info.plist */,
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0903A56E1FAA953C00556A21 /* SearchTableViewCell.swift in Sources */,
 				0947C6A71F9E700E0023E0DD /* CollectionViewController.swift in Sources */,
 				0947C6AB1F9E72D50023E0DD /* MyCollectionViewCell.swift in Sources */,
 				0903A56C1FAA745700556A21 /* SearchViewController.swift in Sources */,
