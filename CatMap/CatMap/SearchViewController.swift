@@ -10,10 +10,10 @@ import UIKit
 
 class SearchViewController: UIViewController, UITableViewDataSource {
 
+    
     @IBOutlet weak var tableView: UITableView!
     var allPhotos: [Photo]!
     var allTags: [String]!
-//    var allTags = ["aa", "bb", "ccc"]
     let searchController = UISearchController(searchResultsController: nil)
     var filteredTags = [String]()
 
@@ -26,7 +26,7 @@ class SearchViewController: UIViewController, UITableViewDataSource {
         tableView.tableHeaderView = searchController.searchBar
         searchController.isActive = true
         searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search by tag"
+        searchController.searchBar.placeholder = "Filter by tag"
         
         // Prevent overlaps
         definesPresentationContext = true
@@ -87,12 +87,37 @@ class SearchViewController: UIViewController, UITableViewDataSource {
     func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
     }
+    
+    @IBAction func resetButton(_ sender: Any) {
+        let collectionVC = self.navigationController?.viewControllers[0] as! CollectionViewController
+        collectionVC.filterdPhotos.removeAll()
+        collectionVC.collectionView?.reloadData()
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: send back data
-        
+        // send back data
+        var filteredPhotos = [Photo]()
+        for photo in allPhotos{
+            for tag in photo.tags{
+                if isFiltering() {
+                    if tag.lowercased() == filteredTags[indexPath.row] {
+                        filteredPhotos.append(photo)
+                        break
+                    }
+                } else{
+                    if tag.lowercased() == allTags[indexPath.row] {
+                        filteredPhotos.append(photo)
+                        break
+                    }
+                }
+            }
+        }
+        let collectionVC = self.navigationController?.viewControllers[0] as! CollectionViewController
+        collectionVC.filterdPhotos = filteredPhotos
+        collectionVC.collectionView?.reloadData()
         navigationController?.popViewController(animated: true)
     }
 }

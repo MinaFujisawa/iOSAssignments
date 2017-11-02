@@ -58,19 +58,19 @@ class FlickerAPI {
         let url = URL(string: "https://api.flickr.com/services/rest/?method=flickr.photos.geo.getLocation&api_key=feadd15b72fc41f22223d740a0c346a5&photo_id=" + id + "&format=json&nojsoncallback=1&")!
         let urlRequest = URLRequest(url: url)
         let session = URLSession(configuration: URLSessionConfiguration.default)
-
+        
         let task = session.dataTask(with: urlRequest) { data, response, error in
             if error != nil {
                 print(error!.localizedDescription)
                 return
             }
-
+            
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-
+                    
                     if let photos = json ["photo"] as? [String: Any] {
-                        if let location = photos["tags"] as? [String: Any] {
+                        if let location = photos["location"] as? [String: Any] {
                             let lan = Double (location["latitude"] as! String)!
                             let lon = Double (location["longitude"] as! String)!
                             coordinate = CLLocationCoordinate2D(latitude: lan, longitude: lon)
@@ -79,7 +79,6 @@ class FlickerAPI {
                     DispatchQueue.main.async {
                         completion(coordinate)
                     }
-
                 } catch {
                     print(error.localizedDescription)
                 }

@@ -10,7 +10,6 @@ import Foundation
 import MapKit
 
 class Photo: NSObject, MKAnnotation {
-
     var title: String?
     var id: String
     var url: URL

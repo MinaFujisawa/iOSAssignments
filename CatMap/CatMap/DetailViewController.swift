@@ -12,6 +12,7 @@ import MapKit
 class DetailViewController: UIViewController {
     var photo : Photo?
     
+    @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
@@ -28,6 +29,12 @@ class DetailViewController: UIViewController {
         let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5);
         self.mapView.region = MKCoordinateRegion(center: photo.coordinate, span: span)
         self.mapView.addAnnotation(photo)
+        var tagsString = "Tag : "
+        for tag in photo.tags {
+            tagsString += tag + " / "
+        }
+        tagLabel.text = tagsString
     }
+    
 
 }

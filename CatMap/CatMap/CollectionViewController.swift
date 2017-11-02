@@ -12,7 +12,8 @@ private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController {
 
-    var photoList = [Photo]()
+    var photos = [Photo]()
+    var filterdPhotos = [Photo]()
     let imageStore = ImageStore()
 
     override func viewDidLoad() {
@@ -24,12 +25,16 @@ class CollectionViewController: UICollectionViewController {
 
 
         let url = URL(string: "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=feadd15b72fc41f22223d740a0c346a5&tags=cat&has_geo=1&extras=url_m&format=json&nojsoncallback=1")!
-        
-        
+
+
         FlickerAPI.fetchBasicData(url: url) { (photos) in
-            self.photoList = photos
+            self.photos = photos
             self.collectionView?.reloadData()
         }
+    }
+
+    func hasFilteredPhotos() -> Bool {
+        return filterdPhotos.count > 0
     }
 
     // MARK: UICollectionViewDataSource
@@ -40,27 +45,33 @@ class CollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photoList.count
+        if hasFilteredPhotos() {
+            return filterdPhotos.count
+        } else {
+            return photos.count
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MyCollectionViewCell
-//        let data = NSData(contentsOf: photoList[indexPath.row].url)
-//        cell.image.image = UIImage(data: data! as Data)
-//        cell.titleLabel.text = photoList[indexPath.row].title
-        
-        let photo = photoList[indexPath.row]
+
+        let photo: Photo
+        if hasFilteredPhotos() {
+            photo = filterdPhotos[indexPath.row]
+        } else {
+            photo = photos[indexPath.row]
+        }
         cell.titleLabel.text = photo.title
-        
+
         // Image
-        let imageFromCache = imageStore.image(forKey: String(describing: indexPath))
-        if let image =  imageFromCache{
+        let imageFromCache = imageStore.image(forKey: photo.id)
+        if let image = imageFromCache {
             cell.image.image = image
         } else {
             let data = NSData(contentsOf: photo.url)
             if let image = UIImage(data: data! as Data) {
                 cell.image.image = image
-                imageStore.setImage(image, forkey: String(describing: indexPath))
+                imageStore.setImage(image, forkey: String(describing: photo.id))
 //                collectionView.reloadItems(at: [indexPath])
             }
         }
@@ -72,15 +83,19 @@ class CollectionViewController: UICollectionViewController {
             let detailVC = segue.destination as! DetailViewController
             let cell = sender as! MyCollectionViewCell
             if let indexPath = self.collectionView!.indexPath(for: cell) {
-                detailVC.photo = photoList[indexPath.row]
+                if hasFilteredPhotos() {
+                    detailVC.photo = filterdPhotos[indexPath.row]
+                } else {
+                    detailVC.photo = photos[indexPath.row]
+                }
             }
         } else if segue.identifier == "GoToSearch" {
             let searchVC = segue.destination as! SearchViewController
-            searchVC.allPhotos = photoList
+            searchVC.allPhotos = photos
             var allTags = Set<String>()
-            for photo in photoList {
+            for photo in photos {
                 for tag in photo.tags {
-                    allTags.insert(tag)
+                    allTags.insert(tag.lowercased())
                 }
             }
             searchVC.allTags = Array(allTags)
