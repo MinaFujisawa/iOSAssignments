@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
 
     }
     
@@ -28,13 +29,29 @@ class DetailViewController: UIViewController {
         navigationItem.title = photo.title
         let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5);
         self.mapView.region = MKCoordinateRegion(center: photo.coordinate, span: span)
-        self.mapView.addAnnotation(photo)
+        
         var tagsString = "Tag : "
         for tag in photo.tags {
             tagsString += tag + " / "
         }
         tagLabel.text = tagsString
+        self.mapView.addAnnotation(photo)
     }
-    
-
 }
+
+extension DetailViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "MyPin"
+        var annotationView: MKPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+        } else {
+            annotationView!.annotation = annotation
+        }
+        return annotationView
+    }
+}
+
+
+

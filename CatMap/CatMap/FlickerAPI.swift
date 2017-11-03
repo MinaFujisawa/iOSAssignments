@@ -89,7 +89,7 @@ class FlickerAPI {
 
     static func fetchTags(id: String, completion: @escaping ([String]) -> ()) {
         var tagList = [String]()
-        let url = URL(string: "https://api.flickr.com/services/rest/?method=flickr.tags.getListPhoto&api_key=ba61f9c6b7c18d89ca60eaf221113fae&photo_id=" + id + "&format=json&nojsoncallback=1&")!
+        let url = URL(string: "https://api.flickr.com/services/rest/?method=flickr.tags.getListPhoto&api_key=feadd15b72fc41f22223d740a0c346a5&photo_id=" + id + "&format=json&nojsoncallback=1&")!
 
         let urlRequest = URLRequest(url: url)
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -104,7 +104,7 @@ class FlickerAPI {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                     
-                    if let photos = json ["photo"] as? [String: Any] {
+                    if let photos = json["photo"] as? [String: Any] {
                         if let tags = photos["tags"] as? [String: Any] {
                             if let tag = tags["tag"] as? [[String: Any]] {
                                 for i in 0...tag.count - 1 {
