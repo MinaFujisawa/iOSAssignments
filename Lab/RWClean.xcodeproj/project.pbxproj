@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090189801FBE159F00A0630D /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0901897F1FBE159F00A0630D /* ProductsViewController.swift */; };
 		420ABA861E74415A00B9884D /* ServerEnvironments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 420ABA851E74415A00B9884D /* ServerEnvironments.plist */; };
 		420B9B541E68D61000972DA3 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420B9B531E68D61000972DA3 /* WelcomePageViewController.swift */; };
 		421139E11E6BCB6D00A057BF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421139E01E6BCB6D00A057BF /* Product.swift */; };
@@ -43,8 +44,6 @@
 		42F164DA1E6C48D600B90E22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F164D91E6C48D600B90E22 /* Main.storyboard */; };
 		42F164DF1E6C494400B90E22 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F164DE1E6C494400B90E22 /* MenuTableViewController.swift */; };
 		42F164E11E6C55C200B90E22 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F164E01E6C55C200B90E22 /* ProductDetailsViewController.swift */; };
-		42F84AB61E6950280029C1E6 /* HomeProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F84AB51E6950280029C1E6 /* HomeProductsViewController.swift */; };
-		42F84AB81E6950350029C1E6 /* BusinessProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F84AB71E6950350029C1E6 /* BusinessProductsViewController.swift */; };
 		42F84ABF1E6953120029C1E6 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F84ABE1E6953120029C1E6 /* ProductCollectionViewCell.swift */; };
 		4E246B7D1FBE01C100402427 /* Int+HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E246B7B1FBE01C100402427 /* Int+HTTPStatusCode.swift */; };
 		4E246B7E1FBE01C100402427 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E246B7C1FBE01C100402427 /* UIImageView+URL.swift */; };
@@ -53,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0901897F1FBE159F00A0630D /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		420ABA851E74415A00B9884D /* ServerEnvironments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServerEnvironments.plist; sourceTree = "<group>"; };
 		420B9B531E68D61000972DA3 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
 		421139E01E6BCB6D00A057BF /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -92,8 +92,6 @@
 		42F164D91E6C48D600B90E22 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		42F164DE1E6C494400B90E22 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		42F164E01E6C55C200B90E22 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
-		42F84AB51E6950280029C1E6 /* HomeProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeProductsViewController.swift; sourceTree = "<group>"; };
-		42F84AB71E6950350029C1E6 /* BusinessProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessProductsViewController.swift; sourceTree = "<group>"; };
 		42F84ABE1E6953120029C1E6 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E246B7B1FBE01C100402427 /* Int+HTTPStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+HTTPStatusCode.swift"; sourceTree = "<group>"; };
 		4E246B7C1FBE01C100402427 /* UIImageView+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
@@ -210,8 +208,7 @@
 		42C0F5D21EB7AE8800C6EBAB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				42F84AB71E6950350029C1E6 /* BusinessProductsViewController.swift */,
-				42F84AB51E6950280029C1E6 /* HomeProductsViewController.swift */,
+				0901897F1FBE159F00A0630D /* ProductsViewController.swift */,
 				428766A31E69344E001D72E5 /* CleaningServicesTableViewController.swift */,
 				42F164E01E6C55C200B90E22 /* ProductDetailsViewController.swift */,
 			);
@@ -480,9 +477,9 @@
 				422FEA5D1E675E8800AFDC41 /* AppDelegate.swift in Sources */,
 				42F164E11E6C55C200B90E22 /* ProductDetailsViewController.swift in Sources */,
 				422FEA921E676B7500AFDC41 /* HomeSquareFootageViewController.swift in Sources */,
-				42F84AB61E6950280029C1E6 /* HomeProductsViewController.swift in Sources */,
 				429ECFC01E744DB9000E6A8C /* UIViewController+LoadingHUD.swift in Sources */,
 				420B9B541E68D61000972DA3 /* WelcomePageViewController.swift in Sources */,
+				090189801FBE159F00A0630D /* ProductsViewController.swift in Sources */,
 				42F84ABF1E6953120029C1E6 /* ProductCollectionViewCell.swift in Sources */,
 				4276FCB61EB3E629004E96B9 /* ParentPushSegue.swift in Sources */,
 				42BF58631EB7CF170072CFCA /* CleaningServicesBuilder.swift in Sources */,
@@ -496,7 +493,6 @@
 				4276FCB31EB3E1DE004E96B9 /* StartHomeInfoViewController.swift in Sources */,
 				421BD4271E68A3C6002F1F3C /* RoomCountViewController.swift in Sources */,
 				422FEA831E6767EB00AFDC41 /* BedroomCountViewController.swift in Sources */,
-				42F84AB81E6950350029C1E6 /* BusinessProductsViewController.swift in Sources */,
 				422FEA901E676B6D00AFDC41 /* OtherRoomCountViewController.swift in Sources */,
 				4276FCB71EB3E629004E96B9 /* SetNavigationRootSegue.swift in Sources */,
 				421139E11E6BCB6D00A057BF /* Product.swift in Sources */,
